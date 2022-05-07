@@ -1,6 +1,11 @@
-const { generateText } = require('./util');
+const { generateText, validateAndGenerate } = require('./util');
 
 test('output should be name & age', () => {
-  const text = generateText('Max', 29);
-  expect(text).toBe('Max (29 years old)');
+  const text = generateText('Paul', 26);
+  expect(text).toBe('Paul (26 years old)');
+});
+
+test('should generate a valid text output', () => {
+  const text = generateText('Paul', 26);
+  expect(text).toBe('Paul (26 years old)');
 });
